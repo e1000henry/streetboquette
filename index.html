@@ -118,19 +118,7 @@
         nav { position: fixed; width: 100%; padding: 20px 50px; background: linear-gradient(180deg, rgba(139, 0, 0, 0.95) 0%, rgba(26, 0, 0, 0.9) 100%); z-index: 1000; animation: slideDown 0.5s ease; border-bottom: 3px solid #ff6600; box-shadow: 0 5px 20px rgba(255, 102, 0, 0.3); }
         @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
         nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        /* MODIFICATION: La police rétro est enlevée d'ici */
-        nav a {
-            color: #ffffff; 
-            text-decoration: none; 
-            font-size: 16px; 
-            font-weight: bold; /* On remet le gras pour la lisibilité */
-            transition: all 0.3s; 
-            padding: 5px 15px; 
-            border-radius: 5px; 
-            position: relative; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-        }
+        nav a { color: #ffffff; text-decoration: none; font-size: 16px; font-weight: bold; transition: all 0.3s; padding: 5px 15px; border-radius: 5px; position: relative; text-transform: uppercase; letter-spacing: 1px; }
         nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 3px; background: linear-gradient(90deg, #ff6600, #ffff00); transition: width 0.3s; }
         nav a:hover::after { width: 100%; }
         nav a:hover { color: #ffff00; transform: translateY(-2px) scale(1.05); text-shadow: 0 0 10px #ff6600; }
@@ -140,94 +128,26 @@
         .hero-content { text-align: center; animation: fadeInUp 1s ease; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         
-        .fight-title {
-            font-size: clamp(2.5em, 8vw, 4em);
-            text-transform: uppercase;
-            position: relative;
-            background: linear-gradient(180deg, #ffff00 0%, #ff6600 50%, #ff0000 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 3px;
-            line-height: 1.2;
-            animation: shake 0.5s infinite alternate;
-            text-shadow: 0 0 30px rgba(255, 102, 0, 0.5);
-            font-family: 'Press Start 2P', cursive;
-        }
+        .fight-title { font-size: clamp(2.5em, 8vw, 4em); text-transform: uppercase; position: relative; background: linear-gradient(180deg, #ffff00 0%, #ff6600 50%, #ff0000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px; line-height: 1.2; animation: shake 0.5s infinite alternate; text-shadow: 0 0 30px rgba(255, 102, 0, 0.5); font-family: 'Press Start 2P', cursive; }
         @keyframes shake { 0% { transform: translateX(-2px) rotate(-1deg); } 100% { transform: translateX(2px) rotate(1deg); } }
         
-        .subtitle { 
-            font-size: 1.2em;
-            margin-top: 20px; 
-            color: #ffff00; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            animation: pulse 1s infinite; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
-            font-family: 'Press Start 2P', cursive;
-        }
+        .subtitle { font-size: 1.2em; margin-top: 20px; color: #ffff00; text-transform: uppercase; letter-spacing: 2px; animation: pulse 1s infinite; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-family: 'Press Start 2P', cursive; }
         @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 0.9; } 50% { transform: scale(1.05); opacity: 1; } }
-        .vs-icon { 
-            width: 150px; 
-            height: 150px; 
-            margin: 30px auto; 
-            border: 5px solid #ff6600; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 3em; 
-            animation: vsAnimation 2s infinite; 
-            background: radial-gradient(circle, rgba(255,102,0,0.3), transparent); 
-            color: #ffff00; 
-            text-shadow: 0 0 20px #ff6600; 
-            font-family: 'Press Start 2P', cursive;
-        }
+        .vs-icon { width: 150px; height: 150px; margin: 30px auto; border: 5px solid #ff6600; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3em; animation: vsAnimation 2s infinite; background: radial-gradient(circle, rgba(255,102,0,0.3), transparent); color: #ffff00; text-shadow: 0 0 20px #ff6600; font-family: 'Press Start 2P', cursive; }
         @keyframes vsAnimation { 0%, 100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 30px rgba(255, 102, 0, 0.5); } 25% { transform: scale(1.1) rotate(5deg); } 50% { transform: scale(1.2) rotate(-5deg); box-shadow: 0 0 50px rgba(255, 255, 0, 0.8); } 75% { transform: scale(1.1) rotate(5deg); } }
 
         /* Sections de contenu */
         section { padding: 80px 20px; max-width: 1200px; margin: 0 auto 30px; position: relative; z-index: 10; background: rgba(26, 0, 0, 0.4); border-radius: 20px; border: 1px solid rgba(255, 102, 0, 1); }
 
-        h2 {
-            font-size: clamp(1.8em, 7vw, 2.5em);
-            margin-bottom: 30px;
-            text-align: center;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #ff6600, #ffff00, #ff6600);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient 3s ease infinite;
-            letter-spacing: 2px;
-            line-height: 1.3;
-            font-family: 'Press Start 2P', cursive;
-        }
+        h2 { font-size: clamp(1.8em, 7vw, 2.5em); margin-bottom: 30px; text-align: center; text-transform: uppercase; background: linear-gradient(90deg, #ff6600, #ffff00, #ff6600); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradient 3s ease infinite; letter-spacing: 2px; line-height: 1.3; font-family: 'Press Start 2P', cursive; }
         @keyframes gradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         .card { background: linear-gradient(135deg, rgba(139, 0, 0, 0.3) 0%, rgba(255, 102, 0, 0.1) 100%); border: 2px solid #ff6600; border-radius: 15px; padding: 30px; transition: all 0.3s; transform: translateY(0); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .card:hover { transform: translateY(-10px) scale(1.05); border-color: #ffff00; box-shadow: 0 15px 40px rgba(255, 102, 0, 0.4); background: linear-gradient(135deg, rgba(255, 102, 0, 0.3) 0%, rgba(255, 255, 0, 0.2) 100%); }
-        .card h3 { 
-            color: #ffff00; 
-            margin-bottom: 15px; 
-            font-size: 1.2em;
-            text-transform: uppercase; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-            font-family: 'Press Start 2P', cursive;
-        }
+        .card h3 { color: #ffff00; margin-bottom: 15px; font-size: 1.2em; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); font-family: 'Press Start 2P', cursive; }
         .power-meter { width: 100%; height: 40px; background: rgba(0, 0, 0, 0.5); border: 2px solid #ff6600; border-radius: 20px; overflow: hidden; margin-top: 20px; position: relative; }
-        .power-fill { 
-            height: 100%; 
-            background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00); 
-            border-radius: 18px; 
-            animation: powerUp 2s ease-out; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #000; 
-            font-size: 1em;
-            text-shadow: 0 0 5px rgba(255,255,255,0.5); 
-            font-family: 'Press Start 2P', cursive;
-        }
+        .power-fill { height: 100%; background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00); border-radius: 18px; animation: powerUp 2s ease-out; display: flex; align-items: center; justify-content: center; color: #000; font-size: 1em; text-shadow: 0 0 5px rgba(255,255,255,0.5); font-family: 'Press Start 2P', cursive; }
         @keyframes powerUp { from { width: 0%; } }
         
         /* Section Hardware */
@@ -235,44 +155,24 @@
         .hardware-image { flex: 1; min-width: 250px; display: flex; align-items: center; justify-content: center; padding: 0; background: none; }
         .hardware-image img { max-width: 100%; height: auto; border-radius: 15px; border: 3px solid #ff6600; }
         .hardware-description { flex: 2; }
-        .hardware-description h3 {
-            font-family: 'Press Start 2P', cursive;
-            color: #ffff00; 
-            margin-bottom: 15px; 
-            font-size: 1.2em;
-            text-transform: uppercase;
-        }
+        .hardware-description h3 { font-family: 'Press Start 2P', cursive; color: #ffff00; margin-bottom: 15px; font-size: 1.2em; text-transform: uppercase; }
         .hardware-description ul { list-style: none; margin-top: 20px; padding: 0; }
         .hardware-description li { background: rgba(255, 255, 255, 0.1); margin-bottom: 10px; padding: 15px; border-left: 5px solid #ffff00; border-radius: 5px; font-size: 1.1em; }
         .hardware-description strong { color: #ffff00; }
         
         /* Section Combos */
         .combo-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; justify-content: center; }
-        .combo-badge { 
-            background: linear-gradient(45deg, #ff0000, #ff6600); 
-            padding: 10px 20px; 
-            border-radius: 25px; 
-            font-size: 0.8em;
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            animation: float 3s ease-in-out infinite; 
-            animation-delay: calc(var(--i) * 0.2s); 
-            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
-            font-family: 'Press Start 2P', cursive;
-        }
+        .combo-badge { background: linear-gradient(45deg, #ff0000, #ff6600); padding: 10px 20px; border-radius: 25px; font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; animation: float 3s ease-in-out infinite; animation-delay: calc(var(--i) * 0.2s); box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3); font-family: 'Press Start 2P', cursive; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
         /* Section Boss */
         .boss-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
-        .boss-card { text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(139, 0, 0, 0.5) 0%, rgba(26, 0, 0, 0.8) 100%); border-radius: 15px; border: 3px solid #ff0000; transition: all 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); flex-basis: 220px; }
+        .boss-card { cursor: pointer; text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(139, 0, 0, 0.5) 0%, rgba(26, 0, 0, 0.8) 100%); border-radius: 15px; border: 3px solid #ff0000; transition: all 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); flex-basis: 220px; }
         .boss-card:hover { transform: scale(1.1) rotate(-5deg); border-color: #ffff00; box-shadow: 0 10px 30px rgba(255, 0, 0, 0.5); }
         .boss-avatar { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 15px; border: 3px solid #ffff00; animation: bossPulse 2s infinite; background-color: #333; overflow: hidden; }
         .boss-avatar img { width: 100%; height: 100%; object-fit: cover; }
         @keyframes bossPulse { 0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); } 50% { box-shadow: 0 0 40px rgba(255, 255, 0, 0.8); } }
-        .boss-card h3 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.1em;
-        }
+        .boss-card h3 { font-family: 'Press Start 2P', cursive; font-size: 1.1em; }
         .final-boss { border-color: #ff0000; border-width: 4px; }
         .final-boss .boss-avatar { animation: none; animation: finalBossGlow 1.5s ease-in-out infinite; }
         .final-boss:hover { transform: scale(1.15) rotate(3deg); border-color: #ffff00; box-shadow: 0 0 60px 10px rgba(255, 255, 0, 0.9); }
@@ -282,34 +182,90 @@
         .team-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
         .team-card { text-align: center; padding: 20px; background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.6) 100%); border-radius: 15px; border: 3px solid #4169e1; transition: all 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); flex-basis: 220px; }
         .team-card:hover { transform: translateY(-10px) scale(1.05); border-color: #87ceeb; box-shadow: 0 10px 30px rgba(65, 105, 225, 0.5); }
-        .team-card h3 {
-            color: #ffff00;
-            margin-bottom: 5px;
-            font-size: 1.2em;
-            font-family: 'Press Start 2P', cursive;
-        }
+        .team-card h3 { color: #ffff00; margin-bottom: 5px; font-size: 1.2em; font-family: 'Press Start 2P', cursive; }
         .team-card p { font-size: 1em; color: #ffffff; }
         .team-avatar { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 15px; border: 3px solid #87ceeb; background-color: #333; overflow: hidden; }
         .team-avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Bouton et Footer */
-        .fight-button { 
-            display: inline-block; 
-            padding: 20px 50px; 
-            background: linear-gradient(45deg, #ff0000, #ff6600, #ffff00); 
-            color: #000; 
-            text-decoration: none; 
-            border-radius: 10px; 
-            font-size: 1.2em;
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin-top: 30px; 
-            transition: all 0.3s; 
-            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5); 
-            border: 3px solid #ffff00; 
-            animation: fightPulse 1s infinite; 
+        
+        /* --- NOUVEAU : Section Merch --- */
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .merch-item {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.4) 0%, rgba(255, 102, 0, 0.2) 100%);
+            border: 2px solid #ff6600;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .merch-item:hover {
+            transform: translateY(-10px);
+            border-color: #ffff00;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.5);
+        }
+        .merch-image-container {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            height: 200px; /* Hauteur fixe pour l'alignement */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .merch-item img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        .merch-item h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: #ffff00;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        .merch-item p {
+            font-size: 0.9em;
+            color: #ffffff;
+            flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant */
+            margin-bottom: 20px;
+        }
+        .merch-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff6600, #ffff00);
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 2px solid #ffff00;
             font-family: 'Press Start 2P', cursive;
         }
+        .merch-button:hover {
+            background: linear-gradient(45deg, #ffff00, #ff6600);
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 255, 0, 0.4);
+        }
+        /* Pour que l'item de la console soit plus large sur grand écran */
+        @media (min-width: 850px) {
+            .wide-item {
+                grid-column: span 2; 
+            }
+        }
+
+        /* Bouton et Footer */
+        .fight-button { display: inline-block; padding: 20px 50px; background: linear-gradient(45deg, #ff0000, #ff6600, #ffff00); color: #000; text-decoration: none; border-radius: 10px; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; margin-top: 30px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5); border: 3px solid #ffff00; animation: fightPulse 1s infinite; font-family: 'Press Start 2P', cursive; }
         @keyframes fightPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .fight-button:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 35px rgba(255, 255, 0, 0.6); filter: brightness(1.2); }
         
@@ -321,22 +277,63 @@
         /* Barres de vie */
         .health-display { display: flex; justify-content: space-around; margin: 30px 0; gap: 20px; }
         .health-bar-container { flex: 1; text-align: center; }
-        .health-label { 
-            font-size: 1em;
-            margin-bottom: 10px; 
-            text-transform: uppercase; 
-            color: #ffff00; 
-            font-family: 'Press Start 2P', cursive;
-        }
+        .health-label { font-size: 1em; margin-bottom: 10px; text-transform: uppercase; color: #ffff00; font-family: 'Press Start 2P', cursive; }
         .health-bar { width: 100%; height: 30px; background: #000; border: 3px solid #ff6600; border-radius: 15px; overflow: hidden; }
         .health-fill { height: 100%; background: linear-gradient(90deg, #00ff00, #ffff00, #ff0000); transition: width 0.5s; animation: healthPulse 2s infinite; }
         @keyframes healthPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+
+        /* --- CSS POUR LA MODALE VIDÉO --- */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .video-modal-content {
+            position: relative;
+            width: 90vw;
+            max-width: 1280px;
+            aspect-ratio: 16 / 9;
+            box-shadow: 0 0 50px rgba(255, 102, 0, 0.5);
+        }
+        #youtube-player, .video-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: 3px solid #ff6600;
+            border-radius: 10px;
+        }
+        .close-modal {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            font-size: 2.5em;
+            color: #ffffff;
+            cursor: pointer;
+            font-family: 'Press Start 2P', cursive;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .close-modal:hover {
+            color: #ffff00;
+            transform: scale(1.2) rotate(90deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
             nav ul { flex-direction: column; gap: 10px; }
             .cards { grid-template-columns: 1fr; }
             .hardware-content { flex-direction: column; }
+            .close-modal { top: -40px; right: 5px; font-size: 2em; }
         }
     </style>
 </head>
@@ -374,6 +371,7 @@
         <li><a href="#bosses">Les Boss</a></li>
         <li><a href="#combos">Combos</a></li>
         <li><a href="#team">L'Équipe</a></li>
+        <li><a href="#merch">Merch</a></li> <!-- LIEN AJOUTÉ -->
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -452,45 +450,34 @@
     <section id="bosses">
         <h2>Les Boss à Affronter</h2>
         <div class="boss-grid">
-            <div class="boss-card">
-                <div class="boss-avatar">
-                    <img src="assets/BELLANGER.jpg" alt="Avatar du roi des éoliennes" loading="lazy">
-                </div>
+            <!-- IMPORTANT: Changez "ID_VIDEO_YOUTUBE_ICI" par l'ID de votre vidéo -->
+            <div class="boss-card" data-video-id="0Ucj1-syfyc">
+                <div class="boss-avatar"><img src="assets/BELLANGER.jpg" alt="Avatar du roi des éoliennes" loading="lazy"></div>
                 <h3>Le roi des éoliennes</h3>
                 <p>Attaque éclair<br/>Difficulté: ★</p>
             </div>
-            <div class="boss-card">
-                <div class="boss-avatar">
-                    <img src="assets/JUBERT.jpg" alt="Avatar du leader de l'industrie" loading="lazy">
-                </div>
+            <div class="boss-card" data-video-id="aLJ2FljoUBY">
+                <div class="boss-avatar"><img src="assets/JUBERT.jpg" alt="Avatar du leader de l'industrie" loading="lazy"></div>
                 <h3>Le leader de l'industrie</h3>
                 <p>Attaque canapé<br/>Difficulté: ★★</p>
             </div>
-            <div class="boss-card">
-                <div class="boss-avatar">
-                    <img src="assets/GARINAL.jpg" alt="Avatar du joueur pokémon" loading="lazy">
-                </div>
+            <div class="boss-card" data-video-id="XEnJwodBoKA">
+                <div class="boss-avatar"><img src="assets/GARINAL.jpg" alt="Avatar du joueur pokémon" loading="lazy"></div>
                 <h3>Le joueur pokémon</h3>
                 <p>Attaque CAO<br/>Difficulté: ★★</p>
             </div>
-            <div class="boss-card">
-                <div class="boss-avatar">
-                    <img src="assets/NARDINE.jpg" alt="Avatar de la comptable" loading="lazy">
-                </div>
+            <div class="boss-card" data-video-id="dSv2rXy2QnM">
+                <div class="boss-avatar"><img src="assets/NARDINE.jpg" alt="Avatar de la comptable" loading="lazy"></div>
                 <h3>La comptable</h3>
                 <p>Attaque tasse de café<br/>Difficulté: ★★★</p>
             </div>
-            <div class="boss-card">
-                <div class="boss-avatar">
-                    <img src="assets/PIRON.jpg" alt="Avatar du nerveux" loading="lazy">
-                </div>
+            <div class="boss-card" data-video-id="zIst76611CI">
+                <div class="boss-avatar"><img src="assets/PIRON.jpg" alt="Avatar du nerveux" loading="lazy"></div>
                 <h3>Le nerveux</h3>
                 <p>Attaque moto qui t'écrase<br/>Difficulté: ★★★★</p>
             </div>
-            <div class="boss-card final-boss">
-                <div class="boss-avatar">
-                    <img src="assets/AD.jpg" alt="Avatar de la hackeuse" loading="lazy">
-                </div>
+            <div class="boss-card final-boss" data-video-id="E9T0FBi--xo">
+                <div class="boss-avatar"><img src="assets/AD.jpg" alt="Avatar de la hackeuse" loading="lazy"></div>
                 <h3>La hackeuse</h3>
                 <p>BOSS FINAL<br/>Difficulté: ★★★★★</p>
             </div>
@@ -512,47 +499,96 @@
     <section id="team">
         <h2>Notre Équipe de Choc</h2>
         <div class="team-grid">
-            <div class="team-card">
-                <div class="team-avatar">
-                    <img src="assets/FLO.jpg" alt="Photo de Florian" loading="lazy">
+            <div class="team-card"><div class="team-avatar"><img src="assets/FLO.jpg" alt="Photo de Florian" loading="lazy"></div><h3>Florian</h3><p>Resp. Design Console</p></div>
+            <div class="team-card"><div class="team-avatar"><img src="assets/EMILE.jpg" alt="Photo de Emile" loading="lazy"></div><h3>Emile</h3><p>Codeur Arduino</p></div>
+            <div class="team-card"><div class="team-avatar"><img src="assets/RAF.jpg" alt="Photo de Raphaël" loading="lazy"></div><h3>Raphaël</h3><p>Monteur Vidéo</p></div>
+            <div class="team-card"><div class="team-avatar"><img src="assets/MAN.jpg" alt="Photo de Manon" loading="lazy"></div><h3>Manon</h3><p>Game Designer</p></div>
+            <div class="team-card"><div class="team-avatar"><img src="assets/PW.jpg" alt="Photo de Wandrille" loading="lazy"></div><h3>Wandrille</h3><p>Game Designer</p></div>
+            <div class="team-card"><div class="team-avatar"><img src="assets/ANT.jpg" alt="Photo de Antoine" loading="lazy"></div><h3>Antoine</h3><p>Développeur Web</p></div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- ============== NOUVELLE SECTION MERCH ============== -->
+    <!-- ============================================= -->
+    <section id="merch">
+        <h2>Notre Merch Exclusif</h2>
+        <div class="merch-grid">
+            <!-- T-shirt -->
+            <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/merch_tshirt.jpg" alt="T-shirt StreetBoquette" loading="lazy">
                 </div>
-                <h3>Florian</h3>
-                <p>Resp. Design Console</p>
+                <h3>T-Shirt Collector</h3>
+                <p>Le style officiel du combattant du diplôme.</p>
+                <a href="#" class="merch-button">Acheter</a>
             </div>
-            <div class="team-card">
-                <div class="team-avatar">
-                    <img src="assets/EMILE.jpg" alt="Photo de Emile" loading="lazy">
+            <!-- Casquette -->
+            <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/merch_cap.jpg" alt="Casquette StreetBoquette" loading="lazy">
                 </div>
-                <h3>Emile</h3>
-                <p>Codeur Arduino</p>
+                <h3>Casquette Rétro</h3>
+                <p>Pour garder la tête froide pendant les combats.</p>
+                <a href="#" class="merch-button">Acheter</a>
             </div>
-            <div class="team-card">
-                <div class="team-avatar">
-                    <img src="assets/RAF.jpg" alt="Photo de Raphaël" loading="lazy">
+            <!-- Console -->
+            <div class="merch-item wide-item">
+                 <div class="merch-image-container">
+                    <img src="assets/merch_console.jpg" alt="Console custom StreetBoquette" loading="lazy">
                 </div>
-                <h3>Raphaël</h3>
-                <p>Monteur Vidéo</p>
+                <h3>Console SNES Custom</h3>
+                <p>L'arme ultime pour décrocher la victoire. Édition limitée.</p>
+                <a href="#" class="merch-button">Précommander</a>
             </div>
-            <div class="team-card">
-                <div class="team-avatar">
-                    <img src="assets/MAN.jpg" alt="Photo de Manon" loading="lazy">
+            <!-- Figurines Pop (6 items) -->
+            <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/pop_bellanger.jpg" alt="Figurine Pop Le roi des éoliennes" loading="lazy">
                 </div>
-                <h3>Manon</h3>
-                <p>Game Designer</p>
+                <h3>Pop! Roi des Éoliennes</h3>
+                <p>Mini-boss de collection.</p>
+                <a href="#" class="merch-button">Acheter</a>
             </div>
-            <div class="team-card">
-                <div class="team-avatar">
-                    <img src="assets/PW.jpg" alt="Photo de Wandrille" loading="lazy">
+            <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/pop_jubert.jpg" alt="Figurine Pop Le leader de l'industrie" loading="lazy">
                 </div>
-                <h3>Wandrille</h3>
-                <p>Game Designer</p>
+                <h3>Pop! Leader Industrie</h3>
+                 <p>Mini-boss de collection.</p>
+                <a href="#" class="merch-button">Acheter</a>
             </div>
-            <div class="team-card">
-                <div class="team-avatar">
-                    <img src="assets/ANT.jpg" alt="Photo de Antoine" loading="lazy">
+            <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/pop_garinal.jpg" alt="Figurine Pop Le joueur pokémon" loading="lazy">
                 </div>
-                <h3>Antoine</h3>
-                <p>Développeur Web</p>
+                <h3>Pop! Joueur Pokémon</h3>
+                 <p>Mini-boss de collection.</p>
+                <a href="#" class="merch-button">Acheter</a>
+            </div>
+             <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/pop_nardine.jpg" alt="Figurine Pop La comptable" loading="lazy">
+                </div>
+                <h3>Pop! La Comptable</h3>
+                 <p>Mini-boss de collection.</p>
+                <a href="#" class="merch-button">Acheter</a>
+            </div>
+             <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/pop_piron.jpg" alt="Figurine Pop Le nerveux" loading="lazy">
+                </div>
+                <h3>Pop! Le Nerveux</h3>
+                 <p>Mini-boss de collection.</p>
+                <a href="#" class="merch-button">Acheter</a>
+            </div>
+             <div class="merch-item">
+                <div class="merch-image-container">
+                    <img src="assets/pop_ad.jpg" alt="Figurine Pop La Hackeuse" loading="lazy">
+                </div>
+                <h3>Pop! La Hackeuse</h3>
+                 <p>Boss final de collection.</p>
+                <a href="#" class="merch-button">Acheter</a>
             </div>
         </div>
     </section>
@@ -572,7 +608,19 @@
     <p style="margin-top: 10px; color: #ffff00;">K.O. ! Fait avec 👊 et beaucoup de ❤️</p>
 </footer>
 
+<!-- MODALE VIDÉO HTML -->
+<div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <div id="youtube-player"></div>
+    </div>
+</div>
+
+<!-- SCRIPT API YOUTUBE -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
+    // --- SCRIPT ORIGINAL ---
     const runner = document.getElementById('runner');
     const school = document.getElementById('school');
     let lastScrollPosition = 0;
@@ -674,6 +722,62 @@
                 titleElement.style.webkitBackgroundClip = '';
                 titleElement.style.webkitTextFillColor = '';
             }, 3000);
+        }
+    });
+    
+    // --- SCRIPT POUR LA MODALE VIDÉO ---
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+    const bossCards = document.querySelectorAll('.boss-card');
+    let player;
+
+    function showAndPlayVideo(videoId) {
+        videoModal.style.display = 'flex';
+        
+        player = new YT.Player('youtube-player', {
+            height: '100%',
+            width: '100%',
+            videoId: videoId,
+            playerVars: {
+                'autoplay': 1,
+                'controls': 1,
+                'rel': 0,
+                'modestbranding': 1,
+                'iv_load_policy': 3
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            hideModal();
+        }
+    }
+
+    function hideModal() {
+        videoModal.style.display = 'none';
+        if (player) {
+            player.destroy();
+        }
+    }
+
+    bossCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const videoId = card.getAttribute('data-video-id');
+            if (videoId && videoId !== 'ID_VIDEO_YOUTUBE_ICI') {
+                showAndPlayVideo(videoId);
+            }
+        });
+    });
+
+    closeModal.addEventListener('click', hideModal);
+
+    videoModal.addEventListener('click', (event) => {
+        if (event.target === videoModal) {
+            hideModal();
         }
     });
 </script>
