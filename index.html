@@ -265,7 +265,24 @@
         }
 
         /* Bouton et Footer */
-        .fight-button { display: inline-block; padding: 20px 50px; background: linear-gradient(45deg, #ff0000, #ff6600, #ffff00); color: #000; text-decoration: none; border-radius: 10px; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; margin-top: 30px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5); border: 3px solid #ffff00; animation: fightPulse 1s infinite; font-family: 'Press Start 2P', cursive; }
+        .fight-button { 
+            display: inline-block; 
+            padding: 20px 50px; 
+            background: linear-gradient(45deg, #ff0000, #ff6600, #ffff00); 
+            color: #000; 
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-size: 1.2em; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin-top: 30px; 
+            transition: all 0.3s; 
+            box-shadow: 0 10px 25px rgba(255, 102, 0, 0.5); 
+            border: 3px solid #ffff00; 
+            animation: fightPulse 1s infinite; 
+            font-family: 'Press Start 2P', cursive; 
+            cursor: pointer; /* Ajout pour montrer que c'est cliquable */
+        }
         @keyframes fightPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .fight-button:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 35px rgba(255, 255, 0, 0.6); filter: brightness(1.2); }
         
@@ -339,6 +356,8 @@
 </head>
 
 <body>
+
+<!-- ... (le reste de votre code du début jusqu'à la section "contact" est inchangé) ... -->
 
 <div class="street-background">
     <div class="houses-container">
@@ -596,7 +615,14 @@
     <section id="contact" style="text-align: center;">
         <h2>Prêt au Combat ?</h2>
         <p style="font-size: 1.4em; margin-bottom: 30px; color: #ff6600;">Viens tester tes skills contre les profs les plus redoutables !</p>
-        <a href="#" class="fight-button">🥊 FIGHT NOW 🥊</a>
+        
+        <!-- ============================================= -->
+        <!-- ============== MODIFICATION HTML ============== -->
+        <!-- ============================================= -->
+        <!-- J'ai ajouté l'attribut data-video-id avec un ID de remplacement. -->
+        <!-- REMPLACEZ "VOTRE_ID_YOUTUBE_ICI" par votre véritable ID de vidéo YouTube. -->
+        <a href="#" class="fight-button" data-video-id="lJTZlWLnRQs">🥊 FIGHT NOW 🥊</a>
+
         <div class="social-links">
             <a href="#" aria-label="Rejoignez notre communauté de joueurs">🎮</a><a href="#" aria-label="Découvrez nos autres projets de jeux">👾</a><a href="#" aria-label="Suivez notre progression sur les hackathons">🕹️</a><a href="#" aria-label="Voir le classement des meilleurs joueurs">🏆</a>
         </div>
@@ -608,7 +634,7 @@
     <p style="margin-top: 10px; color: #ffff00;">K.O. ! Fait avec 👊 et beaucoup de ❤️</p>
 </footer>
 
-<!-- MODALE VIDÉO HTML -->
+<!-- MODALE VIDÉO HTML (inchangé) -->
 <div class="video-modal" id="videoModal">
     <div class="video-modal-content">
         <span class="close-modal" id="closeModal">&times;</span>
@@ -616,7 +642,7 @@
     </div>
 </div>
 
-<!-- SCRIPT API YOUTUBE -->
+<!-- SCRIPT API YOUTUBE (inchangé) -->
 <script src="https://www.youtube.com/iframe_api"></script>
 
 <script>
@@ -695,10 +721,19 @@
         });
     });
 
+    // =============================================
+    // ============== MODIFICATION JAVASCRIPT ==============
+    // =============================================
+    // L'ancien code qui déclenchait une animation de secousse a été remplacé
+    // par le code qui ouvre la modale vidéo.
     document.querySelector('.fight-button').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.body.style.animation = 'shake 0.2s';
-        setTimeout(() => { document.body.style.animation = ''; }, 200);
+        e.preventDefault(); // Empêche le lien de remonter en haut de la page
+        const videoId = this.getAttribute('data-video-id'); // Récupère l'ID de la vidéo
+        if (videoId && videoId !== 'VOTRE_ID_YOUTUBE_ICI') {
+            showAndPlayVideo(videoId); // Appelle la fonction pour afficher la vidéo
+        } else if (videoId === 'VOTRE_ID_YOUTUBE_ICI') {
+            alert("N'oubliez pas de remplacer 'VOTRE_ID_YOUTUBE_ICI' par votre vrai ID de vidéo !");
+        }
     });
 
     let konamiCode = [];
@@ -725,7 +760,7 @@
         }
     });
     
-    // --- SCRIPT POUR LA MODALE VIDÉO ---
+    // --- SCRIPT POUR LA MODALE VIDÉO (inchangé mais utilisé par le bouton) ---
     const videoModal = document.getElementById('videoModal');
     const closeModal = document.getElementById('closeModal');
     const bossCards = document.querySelectorAll('.boss-card');
@@ -734,6 +769,11 @@
     function showAndPlayVideo(videoId) {
         videoModal.style.display = 'flex';
         
+        // Si un lecteur existe déjà, on le détruit pour en créer un nouveau
+        if (player) {
+            player.destroy();
+        }
+
         player = new YT.Player('youtube-player', {
             height: '100%',
             width: '100%',
@@ -760,7 +800,10 @@
     function hideModal() {
         videoModal.style.display = 'none';
         if (player) {
+            // Arrête la vidéo et détruit le lecteur pour libérer les ressources
+            player.stopVideo();
             player.destroy();
+            player = null; // Réinitialise la variable player
         }
     }
 
